@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat with Us on WhatsApp</title>
+    <style>
+        /*
+         * Basic styling for the entire page
+         */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #e5e5e5;
+            margin: 0;
+            padding: 20px;
+        }
+
+        /*
+         * Container for the content
+         */
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            max-width: 450px;
+            width: 100%;
+        }
+
+        /*
+         * Main headings and text
+         */
+        h1 {
+            color: #1a1a1a;
+            margin-bottom: 10px;
+            font-size: 24px;
+        }
+
+        p {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 16px;
+        }
+
+        /*
+         * Button styling
+         */
+        .button-group {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .whatsapp-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 8px;
+            color: white;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .whatsapp-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /*
+         * Specific colors and icons for each app
+         */
+        .whatsapp-button.standard {
+            background-color: #25D366; /* Standard WhatsApp green */
+        }
+
+        .whatsapp-button.business {
+            background-color: #075E54; /* WhatsApp Business green */
+        }
+        
+        .whatsapp-button.premium {
+            background-color: #4CAF50; /* A placeholder color for Premium */
+        }
+
+        .whatsapp-icon {
+            width: 24px;
+            height: 24px;
+            margin-right: 12px;
+        }
+
+        /*
+         * Responsive design for smaller screens
+         */
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 20px;
+            }
+            p {
+                font-size: 14px;
+            }
+            .whatsapp-button {
+                font-size: 16px;
+                padding: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Which WhatsApp would you like to use?</h1>
+        <p>Choose the app you prefer to chat with us on. If you have both, your phone will prompt you to choose.</p>
+        
+        <div class="button-group" id="link-container">
+            </div>
+    </div>
+
+    <script>
+        // === This is the place holder for your links ===
+        // To add a new link, simply add a new object to this array.
+        // You can easily change the name, URL, icon, and CSS class.
+        const whatsappLinks = [
+            {
+                name: "Open WhatsApp",
+                url: "https://wa.me/15551234567",
+                icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/1200px-WhatsApp.svg.png",
+                className: "standard"
+            },
+            {
+                name: "Open WhatsApp Business",
+                url: "https://wa.me/15551234567",
+                icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/WhatsApp_Business_logo.svg/1200px-WhatsApp_Business_logo.svg.png",
+                className: "business"
+            },
+            // This is the dummy placeholder for a future link
+            {
+                name: "WhatsApp Premium (Placeholder)",
+                url: "https://wa.me/15551234567", // You would change this URL
+                icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/1200px-WhatsApp.svg.png", // Use a new icon if available
+                className: "premium"
+            }
+        ];
+
+        // This function dynamically generates the buttons from the data above
+        function generateButtons() {
+            const container = document.getElementById('link-container');
+            
+            // Loop through each link in the whatsappLinks array
+            whatsappLinks.forEach(link => {
+                // Create the HTML elements
+                const a = document.createElement('a');
+                const img = document.createElement('img');
+                
+                // Set the attributes for the elements
+                a.href = link.url;
+                a.className = `whatsapp-button ${link.className}`;
+                a.textContent = link.name;
+                
+                img.src = link.icon;
+                img.alt = `${link.name} Icon`;
+                img.className = "whatsapp-icon";
+                
+                // Append the image to the link, and the link to the container
+                a.prepend(img);
+                container.appendChild(a);
+            });
+        }
+
+        // Run the function when the page loads
+        document.addEventListener('DOMContentLoaded', generateButtons);
+    </script>
+
+</body>
+</html>
