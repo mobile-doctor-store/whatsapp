@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat with Us on WhatsApp</title>
+    <style>
+        /*
+         * Basic styling for the entire page
+         */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #e5e5e5;
+            margin: 0;
+            padding: 20px;
+        }
+
+        /*
+         * Container for the content
+         */
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            max-width: 450px;
+            width: 100%;
+        }
+
+        /*
+         * Main headings and text
+         */
+        h1 {
+            color: #1a1a1a;
+            margin-bottom: 10px;
+            font-size: 24px;
+        }
+
+        p {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 16px;
+        }
+
+        /*
+         * Button styling
+         */
+        .button-group {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .whatsapp-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 8px;
+            color: white;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .whatsapp-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /*
+         * Specific colors and icons for each app
+         */
+        .whatsapp-button.standard {
+            background-color: #25D366; /* Standard WhatsApp green */
+        }
+
+        .whatsapp-button.business {
+            background-color: #075E54; /* WhatsApp Business green */
+        }
+
+        .whatsapp-icon {
+            width: 24px;
+            height: 24px;
+            margin-right: 12px;
+        }
+
+        /*
+         * Responsive design for smaller screens
+         */
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 20px;
+            }
+            p {
+                font-size: 14px;
+            }
+            .whatsapp-button {
+                font-size: 16px;
+                padding: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Which WhatsApp would you like to use?</h1>
+        <p>Choose the app you prefer to chat with us on. If you have both, your phone will prompt you to choose.</p>
+        
+        <div class="button-group">
+            <a href="https://wa.me/15551234567" class="whatsapp-button standard">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/1200px-WhatsApp.svg.png" alt="WhatsApp Icon" class="whatsapp-icon">
+                Open WhatsApp
+            </a>
+
+            <a href="https://wa.me/15551234567" class="whatsapp-button business">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/WhatsApp_Business_logo.svg/1200px-WhatsApp_Business_logo.svg.png" alt="WhatsApp Business Icon" class="whatsapp-icon">
+                Open WhatsApp Business
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>
